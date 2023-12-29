@@ -8,20 +8,33 @@
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
-    <form class="form-inline search-form">
-      <div class="form-group">
-        <input
-          type="text"
-          class="form-control"
-          name="query"
-          placeholder="Search images..."
-        />
-      </div>
-
-      <button type="submit" class="btn btn-primary">Search</button>
+    <form class="form">
+      <input
+        name="query"
+        ;
+        type="text"
+        class="input"
+        placeholder="Search images..."
+        required
+      />
+      <button type="submit" class="btn">Search</button>
     </form>
 
-    <div class="card-container"></div>
+    <div class="loader"></div>
+    <ul class="gallery"></ul>
     <script type="module" src="./main.js"></script>
   </body>
 </html>
+
+<!-- <form class="form" id="searchForm">
+  <input
+    type="text"
+    class="input"
+    placeholder="Search images..."
+    required
+  />
+  <button type="submit" class="btn">Search</button>
+</form>
+
+<div class="loader"></div>
+<ul class="gallery"></ul> -->
