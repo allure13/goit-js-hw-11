@@ -4,9 +4,6 @@ import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 
 const BASE_URL = 'https://pixabay.com/api';
-const API_KEY = '41530173-f95b78bdec41263a85620f647';
-
-const searchForm = document.querySelector('.form');
 const galleryContainer = document.querySelector('.gallery');
 const loader = document.querySelector('.loader');
 
@@ -14,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
   document.querySelector('.form').addEventListener('submit', function (event) {
     event.preventDefault();
 
-    loader.classList.add('loader--active');
+    loader.style.display = 'block';
 
     const searchQuery = document.querySelector('.input').value;
     searchImages(searchQuery);
@@ -38,11 +35,13 @@ function searchImages(query) {
       return response.json();
     })
     .then(data => {
+      loader.style.display = 'none';
       loader.classList.remove('loader--active');
 
       displayImages(data.hits);
     })
     .catch(() => {
+      loader.style.display = 'none';
       loader.classList.remove('loader--active');
 
       showErrorToast();
